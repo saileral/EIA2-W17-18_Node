@@ -1,3 +1,0 @@
-namespace test {
-    console.log(" ");
-}
