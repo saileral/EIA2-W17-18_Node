@@ -12,9 +12,9 @@ namespace ServerTest {
     // Port vom Process-Objekt erfragen 
     let port: number = process.env.PORT;
     // Port nicht definiert -> lokale Maschine, Port selbst definieren
-    if (port == undefined)
-        port = 8100;
-    
+//    if (port == undefined)
+//        port = 8100;
+//    
     // Server-Objekt kreieren
     let server: Http.Server = Http.createServer();
     // Event-Handler installieren
