@@ -10,7 +10,6 @@ var ServerTest;
     // Port nicht definiert -> lokale Maschine, Port selbst definieren
     //    if (port == undefined)
     //        port = 8100;
-    //    
     // Server-Objekt kreieren
     let server = Http.createServer();
     // Event-Handler installieren
@@ -24,7 +23,7 @@ var ServerTest;
     }
     // Request-Event: Verarbeiten der Request und erstellen der Response
     function handleRequest(_request, _response) {
-        console.log("Ich h�re Stimmen!!");
+        console.log("Hey");
         // Header: Antwort kommt im HTML-Format mit uft-8
         _response.setHeader("content-type", "text/html; charset=utf-8");
         // Header: ?

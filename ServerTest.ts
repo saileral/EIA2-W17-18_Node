@@ -14,7 +14,7 @@ namespace ServerTest {
     // Port nicht definiert -> lokale Maschine, Port selbst definieren
 //    if (port == undefined)
 //        port = 8100;
-//    
+    
     // Server-Objekt kreieren
     let server: Http.Server = Http.createServer();
     // Event-Handler installieren
@@ -30,7 +30,7 @@ namespace ServerTest {
 
     // Request-Event: Verarbeiten der Request und erstellen der Response
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-        console.log("Ich höre Stimmen!!");
+        console.log("Hey");
         // Header: Antwort kommt im HTML-Format mit uft-8
         _response.setHeader("content-type", "text/html; charset=utf-8");
         // Header: ?
