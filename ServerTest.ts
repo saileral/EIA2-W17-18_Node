@@ -8,12 +8,12 @@ namespace ServerTest {
     interface AssocStringString {
         [key: string]: string;
     }
-    
+
     // Port vom Process-Objekt erfragen 
     let port: number = process.env.PORT;
     // Port nicht definiert -> lokale Maschine, Port selbst definieren
-//    if (port == undefined)
-//        port = 8100;
+    //    if (port == undefined)
+    //        port =0;
     
     // Server-Objekt kreieren
     let server: Http.Server = Http.createServer();
@@ -23,7 +23,7 @@ namespace ServerTest {
     // Auf dem Port horchen
     server.listen(port);
 
-    // Listening-Event: Rückmeldung wenn horchen läuft
+    // Listening-Event: Rï¿½ckmeldung wenn horchen lï¿½uft
     function handleListen(): void {
         console.log("Server listening on port " + port);
     }
@@ -35,21 +35,21 @@ namespace ServerTest {
         _response.setHeader("content-type", "text/html; charset=utf-8");
         // Header: ?
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        
+
         // Response-Body
-        _response.write("Vielen Dank für Deine Bestellung!<br>Deine Daten:");
-//        _response.write("Port: " + port + "<br>");
-//        _response.write("Method: " + _request.method + "<br>");
-//       _response.write("Url: " + _request.url + "<br>");
-//        _response.write("Headers: " + _request.headers + "<br>");
+        _response.write("Vielen Dank fuer Deine Bestellung!<br>Deine Bestelldaten:<br>");
+        //        _response.write("Port: " + port + "<br>");
+        //        _response.write("Method: " + _request.method + "<br>");
+        _response.write("Url: " + _request.url + "<br>");
+        //        _response.write("Headers: " + _request.headers + "<br>");
 
         // ?
         let query: AssocStringString = Url.parse(_request.url, true).query;
         // ?
         for (let key in query)
             _response.write(key + ": " + query[key] + "<br>");
-        
-        // Antwort abschließen und abschicken
+
+        // Antwort abschlieï¿½en und abschicken
         _response.end();
     }
 }

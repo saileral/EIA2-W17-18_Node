@@ -9,7 +9,7 @@ var ServerTest;
     let port = process.env.PORT;
     // Port nicht definiert -> lokale Maschine, Port selbst definieren
     //    if (port == undefined)
-    //        port = 8100;
+    //        port =0;
     // Server-Objekt kreieren
     let server = Http.createServer();
     // Event-Handler installieren
@@ -29,10 +29,10 @@ var ServerTest;
         // Header: ?
         _response.setHeader("Access-Control-Allow-Origin", "*");
         // Response-Body
-        _response.write("Vielen Dank f�r Deine Bestellung!<br>Deine Daten:");
+        _response.write("Vielen Dank fuer Deine Bestellung!<br>Deine Bestelldaten:<br>");
         //        _response.write("Port: " + port + "<br>");
         //        _response.write("Method: " + _request.method + "<br>");
-        //       _response.write("Url: " + _request.url + "<br>");
+        _response.write("Url: " + _request.url + "<br>");
         //        _response.write("Headers: " + _request.headers + "<br>");
         // ?
         let query = Url.parse(_request.url, true).query;
