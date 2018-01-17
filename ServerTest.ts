@@ -37,7 +37,7 @@ namespace ServerTest {
         _response.setHeader("Access-Control-Allow-Origin", "*");
         
         // Response-Body
-        _response.write("Ich höre Stimmen!!<br>");
+        _response.write("Vielen Dank für Deine Bestellung!<br>Deine Daten:");
         _response.write("Port: " + port + "<br>");
         _response.write("Method: " + _request.method + "<br>");
         _response.write("Url: " + _request.url + "<br>");
