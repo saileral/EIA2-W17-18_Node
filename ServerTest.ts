@@ -4,6 +4,12 @@ import * as Http from "http";
 import * as Url from "url";
 
 namespace ServerTest {
+    
+     interface hans {
+         hansArray: string[];
+         }
+    
+    
     // Neuer Datentyp AssocStringString: homogenes, assoziatives Array.
     interface AssocStringString {
         [key: string]: string;
@@ -30,7 +36,7 @@ namespace ServerTest {
 
     // Request-Event: Verarbeiten der Request und erstellen der Response
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-        console.log("Hey");
+        console.log(_request);
         // Header: Antwort kommt im HTML-Format mit uft-8
         _response.setHeader("content-type", "text/html; charset=utf-8");
         // Header: ?
@@ -43,7 +49,7 @@ namespace ServerTest {
         _response.write("Url: " + _request.url + "<br>");
         //        _response.write("Headers: " + _request.headers + "<br>");
 
-        // ?
+        // ?        
         let query: AssocStringString = Url.parse(_request.url, true).query;
         // ?
         for (let key in query)

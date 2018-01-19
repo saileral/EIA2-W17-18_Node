@@ -23,7 +23,7 @@ var ServerTest;
     }
     // Request-Event: Verarbeiten der Request und erstellen der Response
     function handleRequest(_request, _response) {
-        console.log("Hey");
+        console.log(_request);
         // Header: Antwort kommt im HTML-Format mit uft-8
         _response.setHeader("content-type", "text/html; charset=utf-8");
         // Header: ?
@@ -34,7 +34,7 @@ var ServerTest;
         //        _response.write("Method: " + _request.method + "<br>");
         _response.write("Url: " + _request.url + "<br>");
         //        _response.write("Headers: " + _request.headers + "<br>");
-        // ?
+        // ?        
         let query = Url.parse(_request.url, true).query;
         // ?
         for (let key in query)
