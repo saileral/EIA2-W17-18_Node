@@ -4,12 +4,6 @@ import * as Http from "http";
 import * as Url from "url";
 
 namespace ServerTest {
-    
-     interface hans {
-         hansArray: string[];
-         }
-    
-    
     // Neuer Datentyp AssocStringString: homogenes, assoziatives Array.
     interface AssocStringString {
         [key: string]: string;
@@ -53,10 +47,13 @@ namespace ServerTest {
         let query: AssocStringString = Url.parse(_request.url, true).query;
         // ?
         
-        _response.write("<h1>" + query["Baumart"] + "</h1>");
+       // _response.write("<h1>" + query["Baumart"] + "</h1>");
         
-        for (let key in query)
-            _response.write(key + ": " + query[key] + "<br>");
+        for (let key in query) {
+           _response.write(key + ": " + query[key] + "<br>");
+            
+            
+            }
 
         // Antwort abschlie�en und abschicken
         _response.end();
