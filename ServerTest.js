@@ -29,7 +29,7 @@ var ServerTest;
         // Header: ?
         _response.setHeader("Access-Control-Allow-Origin", "*");
         // Response-Body
-        _response.write("Vielen Dank!<br>Hier einen Überblick über Deine Bestellung:<br>");
+        _response.write("Vielen Dank!<br>Hier ein Überblick über Deine Bestellung:<br>");
         //        _response.write("Port: " + port + "<br>");
         //        _response.write("Method: " + _request.method + "<br>");
         //_response.write("Url: " + _request.url + "<br>");
@@ -38,10 +38,12 @@ var ServerTest;
         let query = Url.parse(_request.url, true).query;
         // ?
         // _response.write("<h1>" + query["Baumart"] + "</h1>");
-        //        if (query[""] == "")
+        //        if (query["Schmuckartikel: Kugel, bunt gestreift"] == "check")
         //            _response.write();
         for (let key in query) {
             _response.write(key + ": " + query[key] + "<br>");
+            if (query["Schmuckartikel: Kugel, bunt gestreift"] == "check")
+                _response.write(key + ": " + query["StepperSchmuckartikel11"] + " Stück<br>");
         }
         // Antwort abschlie�en und abschicken
         _response.end();
