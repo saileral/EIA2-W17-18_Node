@@ -52,9 +52,11 @@ namespace ServerTest {
         //            _response.write();
 
         for (let key in query) {
-            _response.write(key + ": " + query[key] + "<br>");
+            // _response.write(key + ": " + query[key] + "<br>");
             if (query["Schmuckartikel: Kugel, bunt gestreift"] == "check")
                 _response.write(key + ": " + query["StepperSchmuckartikel11"] + " Stück<br>");
+            else
+            _response.write(key + ": " + query[key] + "<br>");
 
         }
 
