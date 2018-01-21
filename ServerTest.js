@@ -41,6 +41,7 @@ var ServerTest;
         //        if (query["Schmuckartikel: Kugel, bunt gestreift"] == "check")
         //            _response.write("Schmuckartikel: Kugel, bunt gestreift" + ": " + query["StepperSchmuckartikel11"] + " Stück<br>");
         for (let key in query) {
+            _response.write(key + ": " + query[key] + "<br>");
         }
         // Antwort abschlie�en und abschicken
         _response.end();
