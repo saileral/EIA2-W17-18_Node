@@ -38,14 +38,9 @@ var ServerTest;
         let query = Url.parse(_request.url, true).query;
         // ?
         // _response.write("<h1>" + query["Baumart"] + "</h1>");
-        //        if (query["Schmuckartikel: Kugel, bunt gestreift"] == "check")
-        //            _response.write();
+        if (query["Schmuckartikel: Kugel, bunt gestreift"] == "check")
+            _response.write("Schmuckartikel: Kugel, bunt gestreift" + ": " + query["StepperSchmuckartikel11"] + " Stück<br>");
         for (let key in query) {
-            // _response.write(key + ": " + query[key] + "<br>");
-            if (query["Schmuckartikel: Kugel, bunt gestreift"] == "check")
-                _response.write(key + ": " + query["StepperSchmuckartikel11"] + " Stück<br>");
-            else
-                _response.write(key + ": " + query[key] + "<br>");
         }
         // Antwort abschlie�en und abschicken
         _response.end();
