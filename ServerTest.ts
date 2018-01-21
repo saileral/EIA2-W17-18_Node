@@ -14,7 +14,7 @@ namespace ServerTest {
     // Port nicht definiert -> lokale Maschine, Port selbst definieren
     //    if (port == undefined)
     //        port =0;
-    
+
     // Server-Objekt kreieren
     let server: Http.Server = Http.createServer();
     // Event-Handler installieren
@@ -37,23 +37,25 @@ namespace ServerTest {
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
         // Response-Body
-        _response.write("Vielen Dank fuer Deine Bestellung!<br>Deine Bestelldaten:<br>");
+        _response.write("Vielen Dank!<br>Hier einen Überblick über Deine Bestellung:<br>");
         //        _response.write("Port: " + port + "<br>");
         //        _response.write("Method: " + _request.method + "<br>");
-        _response.write("Url: " + _request.url + "<br>");
+        //_response.write("Url: " + _request.url + "<br>");
         //        _response.write("Headers: " + _request.headers + "<br>");
 
         // ?        
         let query: AssocStringString = Url.parse(_request.url, true).query;
         // ?
-        
-       // _response.write("<h1>" + query["Baumart"] + "</h1>");
-        
+
+        // _response.write("<h1>" + query["Baumart"] + "</h1>");
+//        if (query[""] == "")
+//            _response.write();
+
         for (let key in query) {
-           _response.write(key + ": " + query[key] + "<br>");
-            
-            
-            }
+            _response.write(key + ": " + query[key] + "<br>");
+
+
+        }
 
         // Antwort abschlie�en und abschicken
         _response.end();
