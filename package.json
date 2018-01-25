@@ -1,15 +1,16 @@
 {
-	"name" : "ServerTest",
-	"version" : "0.0.1",
-	"description" : "Testing node and server",
-	"author" : "Jirka Dell'Oro-Friedl'",
-	"main" : "ServerTest.js",
-	"scripts" : {
-		"start" : "node ServerTest.js"
+	"name": "DatabaseConnection",
+	"version": "0.0.1",
+	"description": "Testing node, server and database",
+	"author": "Jirka Dell'Oro-Friedl'",
+	"main": "Server.js",
+	"scripts": {
+		"start": "node Server.js"
 	},
-	"engines" : {
-		"node" : "6.11.1"
+	"engines": {
+		"node": "6.11.1"
 	},
-	"dependencies" : {
+	"dependencies": {
+		"mongodb": "2.2.12"
 	}
 }
