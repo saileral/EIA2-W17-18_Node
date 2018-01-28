@@ -10,10 +10,10 @@ let databaseName: string = "Test";
 let db: Mongo.Db;
 let students: Mongo.Collection;
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV == "production") {  //wenn in Produktionsumgebung
     //    databaseURL = "mongodb://username:password@hostname:port/database";
     databaseURL = "mongodb://saileral:hi@ds129532.mlab.com:29532/eia-2";
-    databaseName = "eia-2";
+    databaseName = "eia-2"; //Name der Collection
 }
 
 Mongo.MongoClient.connect(databaseURL, handleConnect);
@@ -23,6 +23,7 @@ function handleConnect(_e: Mongo.MongoError, _db: Mongo.Db): void {
         console.log("Unable to connect to database, error: ", _e);
     else {
         console.log("Connected to database!");
+        //Zugriff auf Datenbank und Collection
         db = _db.db(databaseName);
         students = db.collection("students");
     }
